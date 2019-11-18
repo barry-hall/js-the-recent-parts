@@ -1,3 +1,4 @@
+// TEMPLATE STRINGS
 var name = "Barry"; 
 var email = "hello@barry.com"; 
 var title = "Developer";
