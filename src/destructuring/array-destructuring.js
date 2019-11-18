@@ -27,8 +27,7 @@ var [
     }
 ] = getSomeRecords();
 
-
-
+console.log(firstEmail);
 
 function getSomeRecords() {
     return [
