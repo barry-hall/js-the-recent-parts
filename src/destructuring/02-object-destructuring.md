@@ -158,5 +158,6 @@ var {
         x:W // get the value of `x` and assign it to `W`
     }
     c
-} = obj
+} = obj;
 ```
+
