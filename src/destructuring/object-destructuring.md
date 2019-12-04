@@ -53,7 +53,7 @@ tmp = {
 
 ```js
 function data() {
-    return; 
+    return;
 }
 
 //old 
@@ -67,3 +67,34 @@ var {
     b
 } = data() || {};
 ```
+
+## Nested object destructuring
+
+```js
+function data() {
+    return {
+        a: 1, 
+        b: {
+            c: 3,
+            d: 4
+        }
+    }
+}
+
+//old
+var tmp = data() || {};
+var a = tmp.a;
+var b = tmp.b;
+var c = b.c;
+var d = b.d;
+
+//new 
+var {
+    a,
+    b: {
+        c,
+        d
+    }
+} = data() || {};
+```
+
