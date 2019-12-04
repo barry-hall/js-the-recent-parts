@@ -140,3 +140,23 @@ function data({
 
 ## Nested Object & Array Destructuring
 
+You can access both an object and it's value in a destructuring operation e.g.
+
+```js
+var obj = {
+    a: 1,
+    b: {
+        x: 2
+    },
+    c: 3
+};
+
+var {
+    a,
+    b, // we have all of `b`
+    b: {
+        x:W // get the value of `x` and assign it to `W`
+    }
+    c
+} = obj
+```
