@@ -37,7 +37,6 @@ var {
     a: first,
     ...third
  } = data();
- 
 ```
 
 When thinking of object desructuring, the pattern follows _source_, _target_, _default_.
@@ -68,7 +67,7 @@ tmp = {
 
 ```
 
-## Object default assignment
+## Object Default Assignment
 
 ```js
 function data() {
@@ -87,7 +86,7 @@ var {
 } = data() || {};
 ```
 
-## Nested object destructuring
+## Nested Object Destructuring
 
 ```js
 function data() {
@@ -116,4 +115,28 @@ var {
     }
 } = data() || {};
 ```
+
+## Parameter Objects
+
+```js
+//imperative
+function data(tmp = {}) {
+    var {
+        a,
+        b
+    } = tmp;
+    //...
+}
+
+// declarative
+function data({
+    a,
+    b
+}= {} ) {
+    //..
+    // if you don't need the initial object but only it's parts, this is the way to go, if you need the object, use the imperative way.
+}
+```
+
+## Nested Object & Array Destructuring
 
