@@ -1,6 +1,5 @@
 # Object Destructuring
 
-
 ```js
 function data() {
     return { a: 1, b: 2, c: 3 };
@@ -19,6 +18,26 @@ var {
     c: third
  } = data();
 
+```
+
+You can also spread desructured values.
+
+```js
+function data() {
+    return { a: 1, b: 2, c: 3, d: 4 };
+}
+
+var tmp = data();
+var first = tmp.a;
+var second = tmp.b;
+var third = tmp.c;
+
+var {
+    b: second,
+    a: first,
+    ...third
+ } = data();
+ 
 ```
 
 When thinking of object desructuring, the pattern follows _source_, _target_, _default_.
@@ -68,7 +87,7 @@ var {
 } = data() || {};
 ```
 
-## Nested object destructuring
+## Nested object destructuring
 
 ```js
 function data() {

@@ -1,5 +1,51 @@
 # Refactoring code using destructuring
 
+Destructuring: decomposing a structure into its individual parts
+
+## Array example
+
+```js
+// ARRY DESTRUCTURING
+var tmp = getSomeRecords();
+
+//destructuring: imperative
+var first = tmp[0];
+var second = tmp[1];
+
+var firstName = first.name;
+var firstEmail = first.email !== undefined ? first.email : "nobody@none.ltd";
+
+var secondName = second.name;
+var secondEmail = second.email !== undefined ? second.email : "nobody@none.ltd";
+
+// destructuring: declarative
+var [
+    {
+        name: firstName, 
+        email: firstEmail = "nobody@none.ltd"
+    },
+    {
+        name: secondName,
+        email: secondEmail = "nodoy@none.ltd"
+    }
+] = getSomeRecords();
+
+console.log(firstEmail);
+
+function getSomeRecords() {
+    return [
+        {
+            "name": "John",
+            "email": "hello@john.com"
+        },
+        {
+            "name": "Jane",
+            "email": "hello@jane.com"
+        }
+    ];
+}
+```
+
 ![refactoring-code-using-destructuring](./img/refactoring-code-using-destructuring.png)
 
 ## Conditionals
