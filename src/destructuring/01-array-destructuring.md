@@ -21,7 +21,7 @@ var secondEmail = second.email !== undefined ? second.email : "nobody@none.ltd";
 // destructuring: declarative
 var [
     {
-        name: firstName, 
+        name: firstName,
         email: firstEmail = "nobody@none.ltd"
     },
     {
