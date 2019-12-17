@@ -84,13 +84,34 @@ var obj = {
         return {
             next: () =>
                 (index < keys.length) ?
-                { done: false, value: this[keys[index++]]} :
-                {done: true, value: undefined}
+                { done: false, value: this[keys[index++]] } :
+                { done: true, value: undefined }
         };
     }
 };
 
 [...obj];
+// [1,2,3]
 ```
 
 ## Generators
+
+There are a lot of complexities to generators, but when you invoke a generator, they don't run, they produce an iterator.
+
+```js
+function  *main() { // the asterisk means this is a generator
+    yield 1;
+    yield 2;
+    yield 3;
+    return 4;
+}
+var it = main();
+
+it.next();      // {value: 1, done: false}
+it.next();      // {value: 2, done: false}
+it.next();      // {value: 3, done: false}
+it.next();      // {value: 4, done: true}
+
+[...main()];
+// [1,2,3]
+```
