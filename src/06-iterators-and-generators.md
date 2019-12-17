@@ -73,7 +73,7 @@ letters;
 For data structures that don't have an iterator, you need to write one. For example, `object` does not have an iterator.
 
 ```js
-// imperative iterator
+// iterators: imperative iterator
 var obj = {
     a: 1,
     b: 2,
@@ -113,5 +113,25 @@ it.next();      // {value: 3, done: false}
 it.next();      // {value: 4, done: true}
 
 [...main()];
+// [1,2,3]
+```
+
+It is important to understand that what you want to "return" you yeild. Once you hit the return that's the end of the iterator and in the above example you would be throwing away the value 4. It's bad practice to return a value from a generator.
+
+```js
+// iterators: declarative iterator
+
+var obj = {
+    a: 1,
+    b: 2,
+    c: 3,
+    *[Symbol.iterator]() {
+        for(let key of Object.keys(this)) {
+            yield this[key]
+        }
+    }
+};
+
+[...obj];
 // [1,2,3]
 ```
