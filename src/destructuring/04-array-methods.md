@@ -38,7 +38,7 @@ arr.includes( NaN );    //true
 
 ```
 
-## flat & flatMap
+## flat & flatMap (ES2019)
 
 Can be used to flatten an array.
 
@@ -55,4 +55,36 @@ nestedValues.flat(/*defaut: 1*/);
 nestedValues.flat(2);
 // [ 1, 2, 3, 4, 5, 6]
 
+```
+
+flatMap is popular with functional programming.
+
+```js
+[1,2,3].map(function tuples(v) {
+    return [ v * 2. String (v * 2) ]
+});
+// [ [2, "2"], [4, "4"], [6, "6"] ]
+
+[1,2,3].map(function tuples(v) {
+    return [ v * 2. String (v * 2) ]
+}).flat;
+// [ 2, "2", 4, "4", 6, "6" ]
+
+[1,2,3].flatMap(function all(v) {
+    return [ v * 2. String (v * 2) ]
+});
+// [ 2, "2", 4, "4", 6, "6" ]
+```
+
+You can use flatMap to add or remove elements from an array.
+
+```js
+[1,2,3,4,5,6].flatMap(function doubleEvens(v) {
+    if(v % 2 ==0) {
+        return [v, v * 2];
+    } else {
+        return [];
+    }
+});
+// [2, 4, 4, 8, 6, 12]
 ```
