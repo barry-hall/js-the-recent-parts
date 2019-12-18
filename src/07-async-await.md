@@ -56,7 +56,21 @@ main();
 
 ## Async Iterations
 
+You cannot call await within a non async function.
 
+```js
+// async FP Iterations
+async function fetchFiles(files) {
+    var prs = files.map( getFile );
+
+    prs.forEach( function each(pr) { // notice function!
+        console.log( await pr ); // cant await in a normal function
+    });
+}
+
+```
+
+For better async FP iterations, look at getify's library [fasy](https://github.com/getify/fasy).
 
 ## Async Function Problems
 
