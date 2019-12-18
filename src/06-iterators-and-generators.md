@@ -157,7 +157,7 @@ for (let num of numbers) {
 }
 
 // should print 6..30 by 4s
-console.log(`My lucky numbers are:  ${
+console.log(`My lucky numbers are: ${
     [...numbers[Symbox.iterator]({
         start: 6,
         end: 30,
